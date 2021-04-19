@@ -27,21 +27,20 @@ public class NotifyDispatch {
     }
 
     public void _Notify(String key, AbsNotifyItem absNotifyItem) {
-
         ObjNotifyListener valueListener = mNotifyItemListenerMap.get(key);
-
         if (valueListener == null) {
-            Log.w(ObjNotify.TAG, "请先注册[ " + key + " }监听器");
+            Log.e(ObjNotify.TAG, "请先注册该key[" + key + "]!!");
             return;
         }
-
 
         try {
             valueListener.onNotify(absNotifyItem);
         } catch (Throwable throwable) {
             throwable.printStackTrace();
-        } finally {
-            mNotifyItemListenerMap.remove(key);
         }
+    }
+
+    public void unRegisterReceiverNotify(String key) {
+        mNotifyItemListenerMap.remove(key);
     }
 }

@@ -18,6 +18,7 @@
         </activity>
 
         <activity android:name=".OtherActivity" />
+        <activity android:name=".OtherActivity2" />
 
     </application>
 

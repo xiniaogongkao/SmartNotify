@@ -1,2 +1,1 @@
-### ObjNotify 使用文档Y
-
+### ObjNotify 使用文档

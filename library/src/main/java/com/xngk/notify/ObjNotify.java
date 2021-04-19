@@ -46,6 +46,12 @@ public class ObjNotify {
         mNotifyDispatch.registerReceiverNotify(key, objNotifyListener);
     }
 
+
+    public void unRegisterReceiverNotify(String key) {
+        mNotifyDispatch.unRegisterReceiverNotify(key);
+    }
+
+
     public void _Notify(String key, AbsNotifyItem absNotifyItem) {
         if (TextUtils.isEmpty(key)) {
             return;
