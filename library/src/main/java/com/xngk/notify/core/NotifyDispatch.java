@@ -2,7 +2,7 @@ package com.xngk.notify.core;
 
 import android.util.Log;
 
-import com.xngk.notify.ObjNotify;
+import com.xngk.notify.SmartNotify;
 import com.xngk.notify.listener.ObjNotifyListener;
 
 import java.util.concurrent.ConcurrentHashMap;
@@ -29,7 +29,7 @@ public class NotifyDispatch {
     public void _Notify(String key, AbsNotifyItem absNotifyItem) {
         ObjNotifyListener valueListener = mNotifyItemListenerMap.get(key);
         if (valueListener == null) {
-            Log.e(ObjNotify.TAG, "请先注册该key[" + key + "]!!");
+            Log.e(SmartNotify.TAG, "请先注册该key[" + key + "]!!");
             return;
         }
 

@@ -8,8 +8,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xngk.notify.ObjNotify;
-import com.xngk.notify.core.AbsNotifyItem;
+import com.xngk.notify.SmartNotify;
 import com.xngk.notify.core.RefreshItem;
 import com.xngk.notify.listener.ObjNotifyListener;
 
@@ -37,13 +36,13 @@ public class OtherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.other_activity);
 
-        ObjNotify.getImpl().registerReceiverNotify("list2", mStringObjNotifyListener);
+        SmartNotify.getImpl().registerReceiverNotify("list2", mStringObjNotifyListener);
 
 
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjNotify.getImpl().notifyRefresh(RefreshItem.createNeedRefreshItem("list"));
+                SmartNotify.getImpl().postNotify(RefreshItem.createNeedRefreshItem("list"));
                 finish();
             }
         });
@@ -51,7 +50,7 @@ public class OtherActivity extends AppCompatActivity {
         findViewById(R.id.test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjNotify.getImpl().notifyRefresh(RefreshItem.createNotNeedRefreshItem("list"));
+                SmartNotify.getImpl().postNotify(RefreshItem.createNotNeedRefreshItem("list"));
                 finish();
             }
         });
@@ -67,6 +66,6 @@ public class OtherActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ObjNotify.getImpl().unRegisterReceiverNotify("list2");
+        SmartNotify.getImpl().unRegisterReceiverNotify("list2");
     }
 }

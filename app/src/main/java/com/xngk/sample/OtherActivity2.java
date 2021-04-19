@@ -7,7 +7,7 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.xngk.notify.ObjNotify;
+import com.xngk.notify.SmartNotify;
 import com.xngk.notify.core.RefreshItem;
 
 public class OtherActivity2 extends AppCompatActivity {
@@ -22,7 +22,7 @@ public class OtherActivity2 extends AppCompatActivity {
         findViewById(R.id.test).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjNotify.getImpl().notifyRefresh(RefreshItem.createNeedRefreshItem("list2"));
+                SmartNotify.getImpl().postNotify(RefreshItem.createNeedRefreshItem("list2"));
                 finish();
             }
         });
@@ -30,7 +30,7 @@ public class OtherActivity2 extends AppCompatActivity {
         findViewById(R.id.test1).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ObjNotify.getImpl().notifyRefresh(RefreshItem.createNotNeedRefreshItem("list2"));
+                SmartNotify.getImpl().postNotify(RefreshItem.createNotNeedRefreshItem("list2"));
                 finish();
             }
         });

@@ -10,28 +10,28 @@ import com.xngk.notify.listener.ObjNotifyListener;
  * @author xingwei.huang (xwdz9989@gmail.com)
  * @since v1.0.0
  */
-public class ObjNotify {
+public class SmartNotify {
 
-    public static final String TAG = ObjNotify.class.getSimpleName();
+    public static final String TAG = SmartNotify.class.getSimpleName();
 
 
     private static class Holder {
-        public static ObjNotify sObjNotify = new ObjNotify();
+        public static SmartNotify sSmartNotify = new SmartNotify();
     }
 
-    public static ObjNotify getImpl() {
-        return Holder.sObjNotify;
+    public static SmartNotify getImpl() {
+        return Holder.sSmartNotify;
     }
 
 
     private NotifyDispatch mNotifyDispatch;
 
-    private ObjNotify() {
+    private SmartNotify() {
         mNotifyDispatch = new NotifyDispatch();
     }
 
 
-    public void notifyRefresh(AbsNotifyItem absNotifyItem) {
+    public void postNotify(AbsNotifyItem absNotifyItem) {
         _Notify(absNotifyItem.getKey(), absNotifyItem);
     }
 

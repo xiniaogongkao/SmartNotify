@@ -7,7 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
-import com.xngk.notify.ObjNotify;
+import com.xngk.notify.SmartNotify;
 import com.xngk.notify.core.RefreshItem;
 import com.xngk.notify.listener.ObjNotifyListener;
 
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         mTextView = findViewById(R.id.text);
 
-        ObjNotify.getImpl().registerReceiverNotify("list", mObjNotifyListener);
+        SmartNotify.getImpl().registerReceiverNotify("list", mObjNotifyListener);
         mTextView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
