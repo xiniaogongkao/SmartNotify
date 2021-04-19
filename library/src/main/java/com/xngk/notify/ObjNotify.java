@@ -36,11 +36,7 @@ public class ObjNotify {
     }
 
     public void registerReceiverNotify(String key, ObjNotifyListener objNotifyListener) {
-        if (objNotifyListener == null) {
-            return;
-        }
-
-        if (TextUtils.isEmpty(key)) {
+        if (objNotifyListener == null || TextUtils.isEmpty(key)) {
             return;
         }
         mNotifyDispatch.registerReceiverNotify(key, objNotifyListener);
